@@ -1,0 +1,41 @@
+
+1.git报错 
+修改host
+七夕节github整活，要求安全令牌 
+
+2.webpack 版本不兼容 
+原先版本为5.xxx
+需求4.44.2
+卸载指令：npm un webpack -g
+	npm un webpack
+	 npm un webpack-cli -g
+	npm un webpack-cli
+	删除node_modules文件夹 删除package.json 与package-lock.json
+3.npm包需求
+ant design(antd)
+react-app-rewired
+customize-cra
+babel-plugin-import
+less
+less-loader
+
+4.less坑
+ValidationError: Invalid options object. Less Loader has been initialized using an options object that does not match the API schema.
+ - options has an unknown property 'modifyVars'. These properties are valid:
+   object { lessOptions?, prependData?, appendData?, sourceMap? }
+less-loader版本过高，回退版本或者修改config-overrides.js
+const { override, fixBabelImports , addLessLoader} = require("customize-cra");
+const theme = require('./antd-theme');
+module.exports = override(
+  addLessLoader({
+    lessOptions: {
+      javascriptEnabled: true,
+      modifyVars: theme
+   }
+  }),
+  fixBabelImports("import", {
+    libraryName: "antd-mobile",
+    libraryDirectory: 'es',
+    style: true,
+  }),
+);
