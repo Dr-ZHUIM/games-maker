@@ -1,0 +1,82 @@
+.login {
+    width: 100%;
+    height: 100%;
+    background: url(./img/backimg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// .login:after {
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     /* 从父元素继承 background 属性的设置 */
+//     background: inherit;
+//     filter: blur(12px);
+//     z-index: 2;
+// }
+
+
+.login-content {
+    width: 800px;
+    height: 500px;
+    background-color: aliceblue;
+    opacity: 0.9;
+}
+
+.login-content h1{
+    font-size: 2.6em;
+    text-align: center;
+    margin-top: 50px;
+    font-family: PingFangSC-Semibold;
+}
+
+// @media screen and (min-width: 1920px) {
+//     .login-content {
+//         width: 800px;
+//         height: 500px;
+//         background-color: aliceblue;
+//     }
+// }
+
+// /* 设置了浏览器宽度不大于1200px时 head_Top 显示150px高度 */
+// @media screen and (max-width: 900px) {
+//     .login-content {
+//         width: 500px;
+//         height: 300px;
+//         background-color: aliceblue;
+//         margin: auto;
+//     }
+// }
+
+// /* 设置了浏览器宽度不大于900px时 head_Top 显示200px高度 */
+// @media screen and (max-width: 500px) {
+//     .login-content {
+//         width: 300px;
+//         height: 200px;
+//         background-color: aliceblue;
+//         margin: auto;
+//     }
+// }
+
+ .login-form {
+    max-width: 300px;
+    margin:50px auto;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+ .login-form-button {
+    width: 100%;
+}

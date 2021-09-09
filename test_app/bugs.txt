@@ -13,13 +13,16 @@ git config --global http.sslVerify "false" 解决push不动
 	 npm un webpack-cli -g
 	npm un webpack-cli
 	删除node_modules文件夹 删除package.json 与package-lock.json
-3.npm包需求
-ant design(antd)
-react-app-rewired
-customize-cra
-babel-plugin-import
-less
-less-loader
+3.包需求
+//## UI组件包
+ant design(antd) //核心
+react-app-rewired //修改启动
+customize-cra	//客制化
+babel-plugin-import //按需打包
+less	//css核心
+less-loader	//less需求
+//## 路由包
+react-router-dom
 
 4.less坑
 ValidationError: Invalid options object. Less Loader has been initialized using an options object that does not match the API schema.
