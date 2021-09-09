@@ -2,6 +2,8 @@
 1.git报错 
 修改host
 七夕节github整活，要求安全令牌 
+git config --global http.sslVerify "false" 解决push不动
+我的安全令牌 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
 
 2.webpack 版本不兼容 
 原先版本为5.xxx
