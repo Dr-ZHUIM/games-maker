@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# 社交平台
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+本项目为个人用娱乐项目
 
 ## Available Scripts
 

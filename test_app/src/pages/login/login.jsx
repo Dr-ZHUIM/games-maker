@@ -4,11 +4,15 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 import './login.less'
 
-export default class login extends Component {
+export default class Login extends Component {
     render() {
+        // 检测功能
         const onFinish = (values) => {
             console.log('Received values of form: ', values);
         };
+        const onFinishFailed = (errorInfo) => {
+            console.log('Failed:', errorInfo)
+        }        
         return (
             <div className="login">
                 <div className="login-content">
@@ -18,16 +22,36 @@ export default class login extends Component {
                         className="login-form"
                         initialValues={{ remember: true }}
                         onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
                     >
                         <Form.Item
                             name="username"
-                            rules={[{ required: true, message: 'Please input your Username!' }]}
+                            rules={[{ required: true, message: '请输入您的用户名！' },
+                                { type:'enum',enum: ['','M-OC00-00', 'J-OC312-01', 'J-OC312-03', 'J-OC312-04'], message: '请输入开发者提供的用户名'}]}
                         >
                             <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                         </Form.Item>
                         <Form.Item
                             name="password"
-                            rules={[{ required: true, message: 'Please input your Password!' }]}
+                            rules={[{ required: true, message: '请输入您的密码！' },
+                                ({ getFieldValue }) => ({
+                                    validator(value) {
+                                        const username = getFieldValue('username');
+                                        const password = getFieldValue('password');
+                                        if (username === 'M-OC00-00' && password === 'zhuim') {
+                                            return Promise.resolve();
+                                        } else if (username === 'J-OC312-01' && password === 'gaoqinyue') {
+                                            return Promise.resolve();
+                                        } else if (username === 'J-OC312-03' && password === 'wangtianmin') {
+                                            return Promise.resolve();
+                                        } else if (username === 'J-OC312-04' && password === 'simajinyang') {
+                                            return Promise.resolve();
+                                        } else if ( password === '') {
+                                            return Promise.resolve();
+                                        }
+                                        return Promise.reject(new Error('密码错误!'))
+                                    }
+                                })]}
                         >
                             <Input
                                 prefix={<LockOutlined className="site-form-item-icon" />}

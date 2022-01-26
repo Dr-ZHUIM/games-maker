@@ -1,0 +1,20 @@
+{
+    "accounts": {
+        "id": [
+            "J-OC312-01",
+            "J-OC312-03",
+            "J-OC312-04",
+            "J-OC312-04-A",
+            "S-OC31-04",
+            "U-OC189-01"
+        ],
+        "password": [
+            "gaoqingyue",
+            "wangtianmin",
+            "simajinyang",
+            "lisima",
+            "dengxinyi",
+            "lize"
+        ]
+    }
+}
