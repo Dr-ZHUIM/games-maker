@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-
+import {setToken} from '../../utils/auth'
 import './login.less'
 
 export default class Login extends Component {
@@ -9,6 +9,8 @@ export default class Login extends Component {
         // 检测功能
         const onFinish = (values) => {
             console.log('Received values of form: ', values);
+            setToken(values.username);
+            this.props.history.push('/admin')
         };
         const onFinishFailed = (errorInfo) => {
             console.log('Failed:', errorInfo)

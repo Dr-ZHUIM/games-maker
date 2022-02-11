@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import { BrowserRouter, Switch, Route} from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {isLogined} from './utils/auth'
+
 
 import Login from './pages/login/login'
 import Admin from './pages/admin/admin'
@@ -13,7 +15,7 @@ export default class App extends Component {
 
 
     render() {
-        return (
+        return (isLogined() ? (
             < BrowserRouter >
                 <Switch exact={true} >
                     {/* 路由 key对应value       前台路由value对应组件component   后台路由value对应回调函数 */}
@@ -24,6 +26,12 @@ export default class App extends Component {
                 </Switch>
                     <Route path = "/admin/game/link" component={Link}/>
             </BrowserRouter>
+        ) : (< BrowserRouter >
+                 <Route path="/login" component={Login} />
+                <Redirect to='/login'/>
+            </BrowserRouter>
+        )
+
         )
     }
 
